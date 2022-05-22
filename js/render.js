@@ -85,33 +85,7 @@ function renderBeginningText() {
     }
 	renderText((trueCanvas.width)/2 + 2 * settings.scale,upperheight-0*settings.scale, fontSize, '#2c3e50', input_text);
 	renderText((trueCanvas.width)/2 + 2 * settings.scale,upperheight+33*settings.scale, fontSize, '#2c3e50', action_text);
-    if (!mob) {
-	    drawKey("",(trueCanvas.width)/2 + 2 * settings.scale-2.5,upperheight+38*settings.scale);
-    }
 
 	renderText((trueCanvas.width)/2 + 2 * settings.scale,lowerheight,fontSize, '#2c3e50', score_text);
 }
 
-function drawKey(key, x, y) {
-	ctx.save();
-	switch (key) {
-		case "left":
-			ctx.translate(x, y + settings.scale * 13);
-			ctx.rotate(3.14159);
-			ctx.font = "20px Fontawesome";
-			ctx.scale(settings.scale, settings.scale);
-			ctx.fillText(String.fromCharCode("0xf04b"), 0, 0);
-			break;
-		case "right":
-			ctx.font = "20px Fontawesome";
-			ctx.translate(x , y + settings.scale * 27.5);
-			ctx.scale(settings.scale, settings.scale);
-			ctx.fillText(String.fromCharCode("0xf04b"), 0, 0);
-			break;
-		
-		default:
-			drawKey("left", x - 5, y);
-			drawKey("right", x + 5, y);
-	}
-	ctx.restore();
-}
