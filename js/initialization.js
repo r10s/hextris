@@ -41,7 +41,6 @@ function initialize(a) {
 			window.setTimeout(callback, 1000 / framerate);
 		};
 	})();
-	$('#clickToExit').bind('click', toggleDevTools);
 	window.settings;
 	if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		settings = {

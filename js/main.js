@@ -41,10 +41,6 @@ function setBottomContainer() {
     }
 }
 
-function toggleDevTools() {
-	$('#devtools').toggle();
-}
-
 function resumeGame() {
 	gameState = 1;
 	hideUIElements();

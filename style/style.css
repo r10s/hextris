@@ -178,10 +178,6 @@ body {
 	background-color:#ecf0f1;
 }
 
-#clickToExit {
-	cursor:pointer;
-}
-
 #canvas {
 	transition:all 0.5s ease;
 	position:absolute;
