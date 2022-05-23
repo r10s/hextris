@@ -130,6 +130,7 @@ function gameOverDisplay() {
 	settings.ending_block=false;
 	var c = document.getElementById("canvas");
 	c.className = "blur";
+	updateSelfHighscore(score)
 	updateHighScores();
 	if (highscores.length === 0 ){
 		$("#currentHighScore").text(0);
