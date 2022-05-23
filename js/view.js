@@ -116,9 +116,8 @@ function gameOverDisplay() {
 	settings.ending_block=false;
 	updateSelfHighscore(score)
 	$("#gameoverscreen").fadeIn();
-	$("#buttonCont").fadeIn();
 	$("#container").fadeIn();
-	$("#restart").fadeIn();
+	$("#restartXX").show();
 }
 
 var pausable = true;
@@ -137,7 +136,6 @@ function pause(o) {
 
 	if (gameState == -1) {
 		$('#restartBtn').fadeOut(300, "linear");
-		$('#buttonCont').fadeOut(300, "linear");
 		$("#pauseBtn").attr("src", "./images/btn_pause.svg");
 		$('#overlay').fadeOut(300, 'linear');
 		hideText();
@@ -147,7 +145,6 @@ function pause(o) {
 		}, 400);
 	} else if (gameState != -2 && gameState !== 0 && gameState !== 2) {
 		$('#restartBtn').fadeIn(300, "linear");
-		$('#buttonCont').fadeIn(300, "linear");
 		if (message == 'paused') {
 			showText(message);
 		}

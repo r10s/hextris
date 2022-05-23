@@ -139,22 +139,10 @@ function addKeyListeners() {
 	});
 
 
-	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-			$("#restart").on('touchstart', function() {
-			init();
-			canRestart = false;
-			$("#gameoverscreen").fadeOut();
-		});
+	$('#restartXX').on('click', function () {
+		window.location.href = window.location.href + '?s=' + (+new Date())
+	})
 
-	}
-	else {
-		$("#restart").on('mousedown', function() {
-			init();
-			canRestart = false;
-			$("#gameoverscreen").fadeOut();
-		});
-
-	}
 	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 			$("#restartBtn").on('touchstart', function() {
 			init(1);
@@ -169,8 +157,6 @@ function addKeyListeners() {
 			canRestart = false;
 			$("#gameoverscreen").fadeOut();
 		});
-
-
 	}
 
 }

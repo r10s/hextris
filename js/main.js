@@ -29,16 +29,6 @@ function scaleCanvas() {
 
 		ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 	}
-    setBottomContainer();
-}
-
-function setBottomContainer() {
-    var buttonOffset = $("#buttonCont").offset().top;
-    var playOffset = trueCanvas.height / 2 + 100 * settings.scale;
-    var delta = buttonOffset - playOffset - 29;
-    if (delta < 0) {
-        $("#bottomContainer").css("margin-bottom", "-" + Math.abs(delta) + "px");
-    }
 }
 
 function resumeGame() {
@@ -55,7 +45,6 @@ function resumeGame() {
 function checkVisualElements(arg) {
 	if (!$('#pauseBtn').is(':visible')) $('#pauseBtn').fadeIn(150, "linear");
 	if (!$('#restartBtn').is(':visible')) $('#restartBtn').fadeOut(150, "linear");
-	if ($('#buttonCont').is(':visible')) $('#buttonCont').fadeOut(150, "linear");
 }
 
 function hideUIElements() {
