@@ -1,8 +1,3 @@
-// t: current time, b: begInnIng value, c: change In value, d: duration
-function easeOutCubic(t, b, c, d) {
-	return c * ((t = t / d - 1) * t * t + 1) + b;
-}
-
 function renderText(x, y, fontSize, color, text, font) {
 	ctx.save();
 	if (!font) {

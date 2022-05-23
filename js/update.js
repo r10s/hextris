@@ -13,7 +13,6 @@ function update(dt) {
 	var j;
 	var block;
 
-	var objectsToRemove = [];
 	for (i = 0; i < blocks.length; i++) {
 		MainHex.doesBlockCollide(blocks[i]);
 		if (!blocks[i].settled) {

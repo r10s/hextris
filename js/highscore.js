@@ -35,7 +35,4 @@ function getAllHighscores() {
 window.webxdc.setUpdateListener((update) => {
     const player = update.payload
     setHighscoreFor(player.addr, player.name, player.score)
-    if (update.serial === update.max_serial) {
-        // TODO: update highscore list
-    }
 }, 0)
