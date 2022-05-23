@@ -41,6 +41,7 @@ function drawScoreboard() {
 		renderHighscore()
 	} else if (gameState === 2) {
 		// game over
+		ctx.globalAlpha = scoreOpacity;
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy, 45, "rgb(236, 240, 241)", "restart ");
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2.1 + gdy - 155 * settings.scale, 150, "#2c3e50", "overflow");
 		const lowerheight = (trueCanvas.height/2) + ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (11/16);
@@ -88,6 +89,7 @@ function drawPolygon(x, y, sides, radius, theta, fillColor, lineWidth, lineColor
 }
 
 function gameOverDisplay() {
+	scoreOpacity = 0
 	settings.ending_block=false;
 	updateSelfHighscore(score)
 	$("#restartXX").show();
