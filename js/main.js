@@ -34,36 +34,16 @@ function scaleCanvas() {
 function resumeGame() {
 	gameState = 1;
 	hideUIElements();
-	$('#pauseBtn').show();
-	$('#restartBtn').hide();
 	importing = 0;
 	startTime = Date.now();
-
-	checkVisualElements(0);
-}
-
-function checkVisualElements(arg) {
-	if (!$('#pauseBtn').is(':visible')) $('#pauseBtn').fadeIn(150, "linear");
-	if (!$('#restartBtn').is(':visible')) $('#restartBtn').fadeOut(150, "linear");
 }
 
 function hideUIElements() {
-	$('#pauseBtn').hide();
-	$('#restartBtn').hide();
 	$('#startBtn').hide();
 }
 
 function init(b) {
 	if(settings.ending_block && b == 1){return;}
-	if (b) {
-		$("#pauseBtn").attr('src',"./images/btn_pause.svg");
-		setTimeout(function() {
-			infobuttonfading = false;
-		}, 7000);
-		checkVisualElements(1);
-	}
-	infobuttonfading = true;
-	$("#pauseBtn").attr('src',"./images/btn_pause.svg");
 	hideUIElements();
 	history = {};
 	importedHistory = undefined;
@@ -74,8 +54,6 @@ function init(b) {
 	op = 0;
 	scoreOpacity = 0;
 	gameState = 1;
-	$("#restartBtn").hide();
-	$("#pauseBtn").show();
 
 	settings.blockHeight = settings.baseBlockHeight * settings.scale;
 	settings.hexWidth = settings.baseHexWidth * settings.scale;
@@ -139,8 +117,6 @@ function setStartScreen() {
 	init();
 	importing = 1;
 
-	$('#pauseBtn').hide();
-	$('#restartBtn').hide();
 	$('#startBtn').show();
 
 	gameState = 0;
@@ -177,9 +153,6 @@ function animLoop() {
 			setTimeout(function() {
 				enableRestart();
 			}, 150);
-
-			if ($('#pauseBtn').is(':visible')) $('#pauseBtn').fadeOut(150, "linear");
-			if ($('#restartBtn').is(':visible')) $('#restartBtn').fadeOut(150, "linear");
 
 			canRestart = 0;
 		}

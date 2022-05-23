@@ -119,11 +119,6 @@ function initialize(a) {
 	setStartScreen();
 	if (a != 1) {
 		window.canRestart = 1;
-		window.onblur = function(e) {
-			if (gameState == 1) {
-				pause();
-			}
-		};
 		$('#startBtn').off();
 		if (settings.platform == 'mobile') {
 			$('#startBtn').on('touchstart', startBtnHandler);
@@ -137,10 +132,6 @@ function initialize(a) {
 		$(window).resize(scaleCanvas);
 
 		addKeyListeners();
-
-		document.addEventListener("pause", handlePause, false);
-		document.addEventListener("backbutton", handlePause, false);
-		document.addEventListener("menubutton", handlePause, false); //menu button on android
 
 		setTimeout(function() {
 			if (settings.platform == "mobile") {
@@ -213,15 +204,8 @@ function startBtnHandler() {
 
 	if (importing == 1) {
 		init(1);
-		checkVisualElements(0);
 	} else {
 		resumeGame();
-	}
-}
-
-function handlePause() {
-	if (gameState == 1 || gameState == 2) {
-		pause();
 	}
 }
 

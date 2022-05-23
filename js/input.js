@@ -79,15 +79,6 @@ function addKeyListeners() {
 			}
 		}
 	});
-	keypress.register_combo({
-		keys: "p",
-		on_keydown: function(){pause();}
-	});
-
-	keypress.register_combo({
-		keys: "space",
-		on_keydown: function(){pause();}
-	});
 
 	keypress.register_combo({
 		keys: "enter",
@@ -103,14 +94,6 @@ function addKeyListeners() {
 				resumeGame();
 			}
 		}
-	});
-
-	$("#pauseBtn").on('touchstart mousedown', function() {
-		if (gameState != 1 && gameState != -1) {
-			return;
-		}
-		pause();
-		return false;
 	});
 
 	$("#colorBlindBtn").on('touchstart mousedown', function() {
@@ -142,23 +125,6 @@ function addKeyListeners() {
 	$('#restartXX').on('click', function () {
 		window.location.href = window.location.href + '?s=' + (+new Date())
 	})
-
-	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-			$("#restartBtn").on('touchstart', function() {
-			init(1);
-			canRestart = false;
-			$("#gameoverscreen").fadeOut();
-		});
-
-	}
-	else {
-		$("#restartBtn").on('mousedown', function() {
-			init(1);
-			canRestart = false;
-			$("#gameoverscreen").fadeOut();
-		});
-	}
-
 }
 function inside (point, vs) {
 	// ray-casting algorithm based on
