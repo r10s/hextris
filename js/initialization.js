@@ -232,10 +232,6 @@ function startBtnHandler() {
 
 	if (!canRestart) return false;
 
-	if ($('#openSideBar').is(':visible')) {
-		$('#openSideBar').fadeOut(150, "linear");
-	}
-
 	if (importing == 1) {
 		init(1);
 		checkVisualElements(0);

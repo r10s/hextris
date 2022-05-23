@@ -61,21 +61,6 @@ button:focus {
 	outline:0;
 }
 
-#openSideBar {
-	position:fixed;
-	margin-top:6px;
-	width:72px;
-	height:72px;
-	margin-left:11px;
-	z-index:3003;
-	color:#232323;
-	cursor:pointer;
-	top:0;
-	left:0;
-
-}
-
-
 #pauseBtn {
 	display:none;
 	position:fixed;
@@ -220,10 +205,6 @@ button:focus {
 	}
 	#instructions_head {
 		padding-left:0%;
-	}
-	#openSideBar{
-		width:60px;
-		height:60px;
 	}
 	#pauseBtn {
 		width:60px;
