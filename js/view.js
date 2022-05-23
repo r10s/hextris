@@ -45,7 +45,7 @@ function drawScoreboard() {
 	} else if (gameState != 0 && textOpacity > 0) {
 		textOpacity -= 0.05;
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy, 50, "rgb(236, 240, 241)", "start ");
-		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy - 155 * settings.scale, 150, "#2c3e50", "hextris");
+		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2.1 + gdy - 155 * settings.scale, 150, "#2c3e50", "hextris");
 		ctx.globalAlpha = scoreOpacity;
 		renderText(trueCanvas.width / 2 + gdx, trueCanvas.height / 2 + gdy, scoreSize, color, score);
 	} else {
