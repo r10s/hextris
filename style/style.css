@@ -46,16 +46,6 @@ a {
 	list-style:none;
 }
 
-button {
-	color:#ecf0f1;
-	background-color:rgba(0,0,0,0);
-	border:0;
-}
-
-button:focus {
-	outline:0;
-}
-
 #pauseBtn {
 	display:none;
 	position:fixed;
@@ -325,43 +315,9 @@ body {
 	line-height:18px;
 }
 
-
-
-
 #bottomContainer {
 	position:absolute;
 	width:100%;
 	bottom:0px;
 }
 
-#androidBadge {
-	position:absolute;
-	height:41px;
-	margin-top:5px;
-	left:calc(50% - 66px);
-	transform:translate(calc(-50% - 4px), -1px);
-	-webkit-transform:translate(calc(-50% - 4px), -1px);
-	-moz-transform:translate(calc(-50% - 4px), -1px);
-	-ms-transform:translate(calc(-50% - 4px), -1px);
-}
-
-#iOSBadge {
-	margin-top:5px;
-	position:absolute;
-	left:calc(50% + 65px);
-	transform:translate(calc(-50% - 4px), 0%);
-	-webkit-transform:translate(calc(-50% - 4px), 0%);
-	-moz-transform:translate(calc(-50% - 4px), 0%);
-	-ms-transform:translate(calc(-50% - 4px), 0%);
-}
-
-#authors {
-	position:absolute;
-	width:200px;
-	bottom:0px;
-	left:50%;
-	transform:translate(-50%, 0%);
-	-webkit-transform:translate(-50%, 0%);
-	-moz-transform:translate(-50%, 0%);
-	-ms-transform:translate(-50%, 0%);
-}
