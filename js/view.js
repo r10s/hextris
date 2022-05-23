@@ -114,8 +114,6 @@ function hideText() {
 
 function gameOverDisplay() {
 	settings.ending_block=false;
-	var c = document.getElementById("canvas");
-	c.className = "blur";
 	updateSelfHighscore(score)
 	$("#gameoverscreen").fadeIn();
 	$("#buttonCont").fadeIn();

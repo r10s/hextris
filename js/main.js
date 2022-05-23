@@ -76,7 +76,6 @@ function init(b) {
 	infobuttonfading = true;
 	$("#pauseBtn").attr('src',"./images/btn_pause.svg");
 	hideUIElements();
-	document.getElementById("canvas").className = "";
 	history = {};
 	importedHistory = undefined;
 	importing = 0;
