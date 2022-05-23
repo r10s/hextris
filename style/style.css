@@ -272,10 +272,6 @@ button:focus {
 	text-align:center;
 }
 
-.helpText {
-	z-index:3001;
-}
-
 .centeredHeader {
 	font-size:5vw;
 	text-align:center;

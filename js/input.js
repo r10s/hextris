@@ -32,13 +32,13 @@ function addKeyListeners() {
 		on_keyup:function(){
 			if (MainHex && gameState !== 0){
 				//speed up block temporarily
-				
+
 				window.rush /=4;
 				settings.speedUpKeyHeld = false;
 			}
-		}	
+		}
 	});
-	
+
 	keypress.register_combo({
 		keys: "a",
 		on_keydown: function() {
@@ -56,7 +56,7 @@ function addKeyListeners() {
 			}
 		}
 	});
-	
+
 	keypress.register_combo({
 		keys: "s",
 		on_keydown: function() {
@@ -73,11 +73,11 @@ function addKeyListeners() {
 		on_keyup:function(){
 			if (MainHex && gameState !== 0){
 				//speed up block temporarily
-				
+
 				window.rush /=4;
 				settings.speedUpKeyHeld = false;
 			}
-		}	
+		}
 	});
 	keypress.register_combo({
 		keys: "p",
@@ -188,27 +188,23 @@ function addKeyListeners() {
 function inside (point, vs) {
 	// ray-casting algorithm based on
 	// http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
-	
+
 	var x = point[0], y = point[1];
-	
+
 	var inside = false;
 	for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
 		var xi = vs[i][0], yi = vs[i][1];
 		var xj = vs[j][0], yj = vs[j][1];
-		
+
 		var intersect = ((yi > y) != (yj > y))
 			&& (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
 		if (intersect) inside = !inside;
 	}
-	
+
 	return inside;
 };
 
 function handleClickTap(x,y) {
-	if (x < 120 && y < 83 && $('.helpText').is(':visible')) {
-		showHelp();
-		return;
-	}
 	var radius = settings.hexWidth ;
 	var halfRadius = radius/2;
 	var triHeight = radius *(Math.sqrt(3)/2);
@@ -219,7 +215,7 @@ function handleClickTap(x,y) {
 		[-radius,0],
 		[-halfRadius,triHeight],
 		[halfRadius,triHeight]];
-	Vertexes = Vertexes.map(function(coord){ 
+	Vertexes = Vertexes.map(function(coord){
 		return [coord[0] + trueCanvas.width/2, coord[1] + trueCanvas.height/2]});
 
 	if (!MainHex || gameState === 0 || gameState==-1) {

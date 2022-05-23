@@ -176,7 +176,6 @@ function pause(o) {
 		}
 
 		$("#pauseBtn").attr("src", "./images/btn_pause.svg");
-		$('.helpText').fadeOut(300, 'linear');
 		$('#overlay').fadeOut(300, 'linear');
 		hideText();
 		setTimeout(function() {
@@ -186,7 +185,6 @@ function pause(o) {
 	} else if (gameState != -2 && gameState !== 0 && gameState !== 2) {
 		$('#restartBtn').fadeIn(300, "linear");
 		$('#buttonCont').fadeIn(300, "linear");
-		$('.helpText').fadeIn(300, 'linear');
 		if (message == 'paused') {
 			showText(message);
 		}
