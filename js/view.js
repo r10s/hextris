@@ -151,9 +151,7 @@ function pause(o) {
 		message = 'paused';
 	}
 
-	var c = document.getElementById("canvas");
 	if (gameState == -1) {
-		$('#fork-ribbon').fadeOut(300, 'linear');
 		$('#restartBtn').fadeOut(300, "linear");
 		$('#buttonCont').fadeOut(300, "linear");
 		$("#pauseBtn").attr("src", "./images/btn_pause.svg");
@@ -169,7 +167,6 @@ function pause(o) {
 		if (message == 'paused') {
 			showText(message);
 		}
-		$('#fork-ribbon').fadeIn(300, 'linear');
 		$("#pauseBtn").attr("src","./images/btn_resume.svg");
 		$('#overlay').fadeIn(300, 'linear');
 		prevGameState = gameState;
