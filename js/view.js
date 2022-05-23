@@ -39,6 +39,12 @@ function drawScoreboard() {
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy, 50, "rgb(236, 240, 241)", "start ");
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2.1 + gdy - 155 * settings.scale, 150, "#2c3e50", "hextris");
 		renderHighscore()
+	} else if (gameState === 2) {
+		// game over
+		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy, 45, "rgb(236, 240, 241)", "restart ");
+		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2.1 + gdy - 155 * settings.scale, 150, "#2c3e50", "overflow");
+		const lowerheight = (trueCanvas.height/2) + ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (11/16);
+		renderText((trueCanvas.width)/2 + 2 * settings.scale, lowerheight, 33, '#2c3e50', "you scored "+score);
 	} else if (gameState != 0 && textOpacity > 0) {
 		// fade 'start' button out after tapping
 		textOpacity -= 0.05;
@@ -84,7 +90,5 @@ function drawPolygon(x, y, sides, radius, theta, fillColor, lineWidth, lineColor
 function gameOverDisplay() {
 	settings.ending_block=false;
 	updateSelfHighscore(score)
-	$("#gameoverscreen").fadeIn();
-	$("#container").fadeIn();
 	$("#restartXX").show();
 }

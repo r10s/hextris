@@ -28,9 +28,7 @@ function render() {
 	}
 
 	MainHex.draw();
-	if (gameState ==1 || gameState ==-1 || gameState === 0) {
-		drawScoreboard();
-	}
+	drawScoreboard();
 
 	for (i = 0; i < MainHex.texts.length; i++) {
 		var alive = MainHex.texts[i].draw();

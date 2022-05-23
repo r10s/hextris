@@ -88,7 +88,6 @@ function addKeyListeners() {
 			}
 			if (gameState == 2) {
 				init();
-				$("#gameoverscreen").fadeOut();
 			}
 			if (gameState===0) {
 				resumeGame();
