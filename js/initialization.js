@@ -104,16 +104,6 @@ function initialize(a) {
 	window.score = 0;
 	window.scoreAdditionCoeff = 1;
 	window.prevScore = 0;
-	window.numHighScores = 3;
-
-	highscores = [];
-	if (localStorage.getItem('highscores')) {
-		try {
-			highscores = JSON.parse(localStorage.getItem('highscores'));
-		} catch (e) {
-			highscores = [];
-		}
-	}
 	window.blocks = [];
 	window.MainHex;
 	window.gdx = 0;

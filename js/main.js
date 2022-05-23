@@ -30,7 +30,6 @@ function scaleCanvas() {
 		ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 	}
     setBottomContainer();
-    set_score_pos();
 }
 
 function setBottomContainer() {
@@ -40,17 +39,6 @@ function setBottomContainer() {
     if (delta < 0) {
         $("#bottomContainer").css("margin-bottom", "-" + Math.abs(delta) + "px");
     }
-}
-
-function set_score_pos() {
-    $("#container").css('margin-top', '0');
-    var middle_of_container = ($("#container").height()/2 + $("#container").offset().top);
-    var top_of_bottom_container = $("#buttonCont").offset().top
-    var igt = $("#highScoreInGameText")
-    var igt_bottom = igt.offset().top + igt[0].offsetHeight
-    var target_midpoint = (top_of_bottom_container + igt_bottom)/2
-    var diff = (target_midpoint-middle_of_container)
-    $("#container").css("margin-top",diff + "px");
 }
 
 function toggleDevTools() {
@@ -89,12 +77,6 @@ function init(b) {
 			infobuttonfading = false;
 		}, 7000);
 		checkVisualElements(1);
-	}
-	if (highscores.length === 0 ){
-		$("#currentHighScore").text(0);
-	}
-	else {
-		$("#currentHighScore").text(highscores[0])
 	}
 	infobuttonfading = true;
 	$("#pauseBtn").attr('src',"./images/btn_pause.svg");
@@ -167,11 +149,6 @@ function addNewBlock(blocklane, color, iter, distFromHex, settled) { //last two 
 		blockHist[MainHex.ct].settled = settled;
 	}
 	blocks.push(new Block(blocklane, color, iter, distFromHex, settled));
-}
-
-function exportHistory() {
-	$('#devtoolsText').html(JSON.stringify(history));
-	toggleDevTools();
 }
 
 function setStartScreen() {
@@ -289,11 +266,6 @@ function isInfringing(hex) {
 function checkGameOver() {
 	for (var i = 0; i < MainHex.sides; i++) {
 		if (isInfringing(MainHex)) {
-			$.get('http://54.183.184.126/' + String(score))
-			if (highscores.indexOf(score) == -1) {
-				highscores.push(score);
-			}
-			writeHighScores();
 			gameOverDisplay();
 			return true;
 		}
