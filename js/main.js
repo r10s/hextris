@@ -92,7 +92,6 @@ function init(b) {
 		setTimeout(function() {
 			infobuttonfading = false;
 		}, 7000);
-		clearSaveState();
 		checkVisualElements(1);
 	}
 	if (highscores.length === 0 ){
@@ -104,13 +103,11 @@ function init(b) {
 	infobuttonfading = true;
 	$("#pauseBtn").attr('src',"./images/btn_pause.svg");
 	hideUIElements();
-	var saveState = localStorage.getItem("saveState") || "{}";
-	saveState = JSONfn.parse(saveState);
 	document.getElementById("canvas").className = "";
 	history = {};
 	importedHistory = undefined;
 	importing = 0;
-	score = saveState.score || 0;
+	score = 0;
 	prevScore = 0;
 	spawnLane = 0;
 	op = 0;
@@ -118,36 +115,17 @@ function init(b) {
 	gameState = 1;
 	$("#restartBtn").hide();
 	$("#pauseBtn").show();
-	if (saveState.hex !== undefined) gameState = 1;
 
 	settings.blockHeight = settings.baseBlockHeight * settings.scale;
 	settings.hexWidth = settings.baseHexWidth * settings.scale;
-	MainHex = saveState.hex || new Hex(settings.hexWidth);
-	if (saveState.hex) {
-		MainHex.playThrough += 1;
-	}
+	MainHex = new Hex(settings.hexWidth);
 	MainHex.sideLength = settings.hexWidth;
 
-	var i;
-	var block;
-	if (saveState.blocks) {
-		saveState.blocks.map(function(o) {
-			if (rgbToHex[o.color]) {
-				o.color = rgbToHex[o.color];
-			}
-		});
+	blocks = [];
 
-		for (i = 0; i < saveState.blocks.length; i++) {
-			block = saveState.blocks[i];
-			blocks.push(block);
-		}
-	} else {
-		blocks = [];
-	}
-
-	gdx = saveState.gdx || 0;
-	gdy = saveState.gdy || 0;
-	comboTime = saveState.comboTime || 0;
+	gdx = 0;
+	gdy = 0;
+	comboTime = 0;
 
 	for (i = 0; i < MainHex.blocks.length; i++) {
 		for (var j = 0; j < MainHex.blocks[i].length; j++) {
@@ -167,7 +145,7 @@ function init(b) {
 	MainHex.y = -100;
 
 	startTime = Date.now();
-	waveone = saveState.wavegen || new waveGen(MainHex);
+	waveone = new waveGen(MainHex);
 
 	MainHex.texts = []; //clear texts
 	MainHex.delay = 15;
@@ -203,11 +181,7 @@ function exportHistory() {
 function setStartScreen() {
 	$('#startBtn').show();
 	init();
-	if (isStateSaved()) {
-		importing = 0;
-	} else {
-		importing = 1;
-	}
+	importing = 1;
 
 	$('#pauseBtn').hide();
 	$('#restartBtn').hide();
@@ -242,8 +216,6 @@ function animLoop() {
 		lastTime = now;
 
 		if (checkGameOver() && !importing) {
-			var saveState = localStorage.getItem("saveState") || "{}";
-			saveState = JSONfn.parse(saveState);
 			gameState = 2;
 
 			setTimeout(function() {
@@ -258,7 +230,6 @@ function animLoop() {
 			if ($('#restartBtn').is(':visible')) $('#restartBtn').fadeOut(150, "linear");
 
 			canRestart = 0;
-			clearSaveState();
 		}
 		break;
 

@@ -35,11 +35,6 @@ function initialize(a) {
 	window.textOpacity = 0;
 	window.prevGameState = undefined;
 	window.op = 0;
-	window.saveState = localStorage.getItem("saveState") || "{}";
-	if (saveState !== "{}") {
-		op = 1;
-	}
-
 	window.textShown = false;
 	window.requestAnimFrame = (function() {
 		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(callback) {
@@ -151,11 +146,6 @@ function initialize(a) {
 			e.preventDefault();
 		}, false);
 		$(window).resize(scaleCanvas);
-		$(window).unload(function() {
-
-			if (gameState == 1 || gameState == -1 || gameState === 0) localStorage.setItem("saveState", exportSaveState());
-			else localStorage.setItem("saveState", "{}");
-		});
 
 		addKeyListeners();
 
