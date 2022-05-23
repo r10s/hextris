@@ -33,7 +33,6 @@ function initialize(a) {
 	window.angularVelocityConst = 4;
 	window.scoreOpacity = 0;
 	window.textOpacity = 0;
-	window.prevGameState = undefined;
 	window.op = 0;
 	window.textShown = false;
 	window.requestAnimFrame = (function() {
