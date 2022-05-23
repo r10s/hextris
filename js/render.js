@@ -3,7 +3,7 @@ function render() {
 	if (gameState === 0) {
 		grey = "rgb(220, 223, 225)";
 	}
-	
+
 	ctx.clearRect(0, 0, trueCanvas.width, trueCanvas.height);
 	clearGameBoard();
 	if (gameState === 1 || gameState === 2 || gameState === -1 || gameState === 0) {
@@ -66,22 +66,17 @@ function render() {
 }
 
 function renderBeginningText() {
-	var upperheight = (trueCanvas.height/2) - ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (5/6);
-	var lowerheight = (trueCanvas.height/2) + ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (11/16);
-    var text = '';
-    var mob, fontSize;
+	const upperheight = (trueCanvas.height/2) - ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (5/6);
+	const lowerheight = (trueCanvas.height/2) + ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (11/16);
+    const fontSize = 33;
     if(/mobile|Mobile|iOS|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        mob = true;
-        input_text = 'tap screen\'s left and right'
-        action_text = 'sides to rotate'
-        score_text = 'match 3+ blocks to score'
-        fontSize = 35
+		input_text = 'tap screen\'s left'
+		action_text = 'and right sides to rotate'
+		score_text = 'match 3+ blocks to score'
     } else {
-        mob = false
-        input_text = 'use left and right'
-        action_text = 'arrow keys to rotate'
-        score_text = 'match 3+ blocks to score'
-        fontSize = 27
+		input_text = 'use left and right'
+		action_text = 'arrow keys to rotate'
+		score_text = 'match 3+ blocks to score'
     }
 	renderText((trueCanvas.width)/2 + 2 * settings.scale,upperheight-0*settings.scale, fontSize, '#2c3e50', input_text);
 	renderText((trueCanvas.width)/2 + 2 * settings.scale,upperheight+33*settings.scale, fontSize, '#2c3e50', action_text);
@@ -89,3 +84,17 @@ function renderBeginningText() {
 	renderText((trueCanvas.width)/2 + 2 * settings.scale,lowerheight,fontSize, '#2c3e50', score_text);
 }
 
+function renderHighscore() {
+	const lowerheight = (trueCanvas.height/2) + ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (11/16);
+	const fontSize = 27
+
+	var cnt = 0
+	getAllHighscores().forEach(item => {
+		if (cnt < 5) {
+			const name = item.name.length > 17 ? item.name.substring(0, 15) + '…' : item.name;
+			const line = name + " " + item.score
+			renderText((trueCanvas.width)/2 + 2 * settings.scale, lowerheight + (fontSize*cnt), fontSize, '#2c3e50', line);
+			cnt += 1
+		}
+	});
+}

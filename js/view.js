@@ -42,6 +42,7 @@ function drawScoreboard() {
 	if (gameState === 0) {
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy, 50, "rgb(236, 240, 241)", "start ");
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2.1 + gdy - 155 * settings.scale, 150, "#2c3e50", "hextris");
+		renderHighscore()
 	} else if (gameState != 0 && textOpacity > 0) {
 		textOpacity -= 0.05;
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy, 50, "rgb(236, 240, 241)", "start ");
