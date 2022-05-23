@@ -31,28 +31,8 @@
 	-ms-transform:translate(-50%, -50%);
     display:none;
 }
-.tweet {
-	font-size:2rem;
-	color:#4099FF;
-}
-@media only screen and (min-device-width:320px) and (max-device-width:480px) {
-	.tweet{
-		font-size:1rem;
-	}
-}
 a {
 	color:#232323;
-}
-.navbar {
-	width:80%;
-	margin:0 auto;
-	padding:2.5vmin 0;
-	text-align:center;
-}
-.navbar li {
-	display:inline-block;
-	text-align:center;
-	width:calc(33% - 1.25vmin);
 }
 
 #title {
@@ -69,10 +49,6 @@ a {
 #highscores {
 	text-align:center;
 	list-style:none;
-}
-
-.not-visible {
-	display:none;
 }
 
 button {
