@@ -116,10 +116,6 @@ function addKeyListeners() {
 		if (gameState != 1 && gameState != -1) {
 			return;
 		}
-
-		if ($('#helpScreen').is(":visible")) {
-			$('#helpScreen').fadeOut(150, "linear");
-		}
 		pause();
 		return false;
 	});

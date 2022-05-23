@@ -99,20 +99,6 @@ button:focus {
 	cursor:pointer;
 }
 
-#helpScreen {
-	height:100%;
-	width:100%;
-	z-index:3001;
-	position:fixed;
-	top:0;
-	margin:0;
-	font-size:15px;
-	text-align:center;
-	display:none;
-	color:#232323;
-	background-color:rgba(236,240,241,1);
-}
-
 #colorBlindBtn {
 	position:absolute;
 	width:120px;
@@ -124,37 +110,6 @@ button:focus {
 	text-align:center;
 	color:#232323;
 	cursor:pointer;
-}
-
-#inst_main_body {
-	padding:0px;
-	font-size:1.2em;
-	left:50%;
-	top:50%;
-	position: absolute;
-	text-align:left;
-	max-width:400px;
-	/*margin-top:30px;*/
-	transform:translate(-50%, -50%);
-	-webkit-transform:translate(-50%, -50%);
-	-moz-transform:translate(-50%, -50%);
-	-ms-transform:translate(-50%, -50%);
-}
-
-#inst_main_body > a {
-	font-weight:bold;
-}
-
-#inst_main_body > hr {
-	width:100%;
-	color:#232323;
-	background-color:#232323;
-	height:1px;
-	border:0;
-}
-
-#inst_main_body > p {
-	margin-bottom:15px;
 }
 
 #instructions_head {
@@ -186,23 +141,6 @@ button:focus {
 }
 
 @media only screen and (max-device-width:480px) {
-	#helpScreen {
-		position:fixed;
-		top:2px;
-		padding-top:20px;
-		margin:0;
-		width:100%;
-		height:100%;
-		font-size:13px;
-		text-align:center;
-	}
-	#inst_main_body {
-		width:calc(100% - 70px);
-		transform:translate(-50%, -50%);
-		-webkit-transform:translate(-50%, -50%);
-		-moz-transform:translate(-50%, -50%);
-		-ms-transform:translate(-50%, -50%);
-	}
 	#instructions_head {
 		padding-left:0%;
 	}

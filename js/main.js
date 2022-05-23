@@ -85,10 +85,6 @@ function init(b) {
 	if(settings.ending_block && b == 1){return;}
 	if (b) {
 		$("#pauseBtn").attr('src',"./images/btn_pause.svg");
-		if ($('#helpScreen').is(":visible")) {
-			$('#helpScreen').fadeOut(150, "linear");
-		}
-
 		setTimeout(function() {
 			infobuttonfading = false;
 		}, 7000);
@@ -221,10 +217,6 @@ function animLoop() {
 			setTimeout(function() {
 				enableRestart();
 			}, 150);
-
-			if ($('#helpScreen').is(':visible')) {
-				$('#helpScreen').fadeOut(150, "linear");
-			}
 
 			if ($('#pauseBtn').is(':visible')) $('#pauseBtn').fadeOut(150, "linear");
 			if ($('#restartBtn').is(':visible')) $('#restartBtn').fadeOut(150, "linear");

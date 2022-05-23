@@ -171,10 +171,6 @@ function pause(o) {
 		$('#fork-ribbon').fadeOut(300, 'linear');
 		$('#restartBtn').fadeOut(300, "linear");
 		$('#buttonCont').fadeOut(300, "linear");
-		if ($('#helpScreen').is(':visible')) {
-			$('#helpScreen').fadeOut(300, "linear");
-		}
-
 		$("#pauseBtn").attr("src", "./images/btn_pause.svg");
 		$('#overlay').fadeOut(300, 'linear');
 		hideText();
