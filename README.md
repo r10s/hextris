@@ -1,39 +1,23 @@
 Hextris
 ==========
 
-<img src="images/twitter-opengraph.png" width="100px"><br>
+Webxdc port of Hextris, an addictive puzzle game inspired by Tetris. 
 
-An addictive puzzle game inspired by Tetris. Play it at [www.hextris.io](http://www.hextris.io), or [https://hextris.github.io/hextris](https://hextris.github.io/hextris).
+<img src="icon.png" width="100px"><br>
 
-By:
- - Logan Engstrom ([@lengstrom](http://loganengstrom.com/))
- - Garrett Finucane ([@garrettdreyfus](http://github.com/garrettdreyfus))
- - Noah Moroze ([@nmoroze](http://github.com/nmoroze))
- - Michael Yang ([@themichaelyang](http://github.com/themichaelyang))
- 
- ## Citation
-Did you use Hextris in your research? Cite us as follows:
-```
-  @misc{engstrom2015hextris,
-    author = {Logan Engstrom, Garrett Finucane, Noah Moroze, Michael Yang},
-    title = {hextris},
-    year = {2015},
-    howpublished = {\url{https://github.com/hextris/hextris/}},
-    note = {commit xxxxxxx}
-  }
-```
+[Download .xdc from Release Assets](https://github.com/webxdc/hextris/releases), attach to a Delta Chat group and share highscores there!
 
-
-# Contributions
-This project is not very actively maintained, as we are all very busy these days. But feel free to open an issue or PR, and we'll eventually take a look.
-
-# About
-Hextris was created by a group of high school friends in 2014.
-
-## Press kit
-http://hextris.github.io/presskit/info.html
+[Online Demo](https://webxdc.github.io/hextris/)
 
 ## License
+
+Original Hextris by
+[Logan Engstrom](http://loganengstrom.com/),
+[Garrett Finucane](http://github.com/garrettdreyfus),
+[Noah Moroze](http://github.com/nmoroze),
+[Michael Yang](http://github.com/themichaelyang),
+<https://github.com/Hextris/hextris>
+
 Copyright (C) 2018 Logan Engstrom
 
 This program is free software: you can redistribute it and/or modify
