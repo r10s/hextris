@@ -88,7 +88,6 @@ function init(b) {
 
 	MainHex.texts = []; //clear texts
 	MainHex.delay = 15;
-	hideText();
 }
 
 function addNewBlock(blocklane, color, iter, distFromHex, settled) { //last two are optional parameters

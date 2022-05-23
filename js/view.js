@@ -84,34 +84,6 @@ function drawPolygon(x, y, sides, radius, theta, fillColor, lineWidth, lineColor
 	ctx.strokeStyle = 'rgba(0,0,0,0)';
 }
 
-function toggleClass(element, active) {
-	if ($(element).hasClass(active)) {
-		$(element).removeClass(active);
-	} else {
-		$(element).addClass(active);
-	}
-}
-
-function showText(text) {
-	var messages = {
-		'paused': "<div class='centeredHeader unselectable'>Game Paused</div>",
-		'start': "<div class='centeredHeader unselectable' style='line-height:80px;'>Press enter to start</div>"
-	};
-
-	if (text == 'gameover') {
-		$("#gameoverscreen").fadeIn();
-    	}
-	$(".overlay").html(messages[text]);
-	$(".overlay").fadeIn("1000", "swing");
-
-}
-
-function hideText() {
-	$(".overlay").fadeOut(150, function() {
-		$(".overlay").html("");
-	})
-}
-
 function gameOverDisplay() {
 	settings.ending_block=false;
 	updateSelfHighscore(score)
