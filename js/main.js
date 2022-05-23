@@ -219,11 +219,9 @@ function isInfringing(hex) {
 }
 
 function checkGameOver() {
-	for (var i = 0; i < MainHex.sides; i++) {
-		if (isInfringing(MainHex)) {
-			gameOverDisplay();
-			return true;
-		}
+	if (isInfringing(MainHex)) {
+		gameOverDisplay();
+		return true;
 	}
 	return false;
 }
