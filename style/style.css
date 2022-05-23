@@ -35,11 +35,6 @@ a {
 	color:#232323;
 }
 
-#title {
-	color:#ecf0f1;
-	font-size:6vmin;
-}
-
 #score {
 	font-size:4vmin;
 	text-align:center;
@@ -112,13 +107,6 @@ button:focus {
 	cursor:pointer;
 }
 
-#instructions_head {
-	text-align:center;
-	font-size:1.5em;
-	padding-bottom:4px;
-}
-
-
 #highScoreInGameTextHeader {
 	color: #bdc3c7;
 	width:100%;
@@ -141,9 +129,6 @@ button:focus {
 }
 
 @media only screen and (max-device-width:480px) {
-	#instructions_head {
-		padding-left:0%;
-	}
 	#pauseBtn {
 		width:60px;
 		height:60px;
@@ -273,11 +258,6 @@ body {
 	width:100%;
 	background-color:#ecf0f1;
 	z-index:0;
-}
-#title {
-	z-index:99;
-	margin-top:20px;
-	color:#2c3e50;
 }
 
 #gameoverscreen {
