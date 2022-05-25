@@ -1,5 +1,4 @@
-Hextris
-==========
+# Hextris
 
 Webxdc port of Hextris, an addictive puzzle game inspired by Tetris. 
 
@@ -8,6 +7,16 @@ Webxdc port of Hextris, an addictive puzzle game inspired by Tetris.
 [Download .xdc from Release Assets](https://github.com/webxdc/hextris/releases), attach to a Delta Chat group and share highscores there!
 
 [Online Demo](https://webxdc.github.io/hextris/)
+
+
+## Building
+
+to create a `.xdc` file that can be attached to a Delta Chat group, execute:
+
+```sh
+./create-xdc.sh
+```
+
 
 ## License
 
