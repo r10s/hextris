@@ -66,7 +66,7 @@ function render() {
 function renderBeginningText() {
 	const upperheight = (trueCanvas.height/2) - ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (5/6);
 	const lowerheight = (trueCanvas.height/2) + ((settings.rows * settings.blockHeight) * (2/Math.sqrt(3))) * (11/16);
-    const fontSize = 33;
+    const fontSize = 30;
     if(/mobile|Mobile|iOS|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		input_text = 'tap screen\'s left'
 		action_text = 'and right sides to rotate'
