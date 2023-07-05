@@ -1,2 +1,3 @@
 name = "Hextris"
-source_code_url = "https://github.com/r10s/hextris"
+description = "Fast paced puzzle game inspired by Tetris"
+source_code_url = "https://github.com/webxdc/hextris"
