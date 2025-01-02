@@ -1,4 +1,6 @@
-# Hextris
+# MOVED TO <https://codeberg.org/r10s/hextris>
+
+## Hextris
 
 Webxdc port of Hextris, an addictive puzzle game inspired by Tetris. 
 
